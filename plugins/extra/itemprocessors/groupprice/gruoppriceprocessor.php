@@ -80,11 +80,12 @@ class GrouppriceProcessor extends Magmi_ItemProcessor
         foreach ($cols as $col) {
             if (preg_match("|group_price:(.*)|", $col, $matches)) {
                 $sql = 'SELECT customer_group_id FROM ' . $this->tablename("customer_group") . ' WHERE customer_group_code = ?';
-                $id = $this->selectone($sql, $matches[1], "customer_group_id");
-                $this->_groups[$col] = array(
-                    'name'  => $matches[1],
-                    'id'    => $id
-                );
+                if ($id = $this->selectone($sql, $matches[1], "customer_group_id")) {
+                    $this->_groups[$col] = array(
+                        'name'  => $matches[1],
+                        'id'    => $id
+                    );
+                }
             }
         }
         return true;
