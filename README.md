@@ -12,5 +12,5 @@ Multiwebsite functionality
 
 You should have a `websites` column with comma separated website codes (e.g. com,net) in your import file.
 
-Use the same ordering in the group_price column:
-e.g. `group_price for com website:customer_group`,`group_price for net website:customer_group`.
+Use the same ordering in the group_price column (but with pipe (|) as separator:
+e.g. `group_price_for_com_website|group_price_for_net_website`.
