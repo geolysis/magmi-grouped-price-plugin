@@ -10,7 +10,7 @@ The column format for customer price groups is `group_price:customer_group`, whe
 Multiwebsite functionality
 ==========================
 
-You should have a `websites column` with comma separated website codes (e.g. com,net) in your import file.
+You should have a `websites` column with comma separated website codes (e.g. com,net) in your import file.
 
 Use the same ordering in the group_price column:
 e.g. `group_price for com website:customer_group`,`group_price for net website:customer_group`.
