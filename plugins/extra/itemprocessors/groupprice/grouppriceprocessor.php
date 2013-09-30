@@ -44,7 +44,6 @@ class GrouppriceProcessor extends Magmi_ItemProcessor
 			foreach ($groupColumns as $key) {
 
 				$price = explode(self::WEBSITES_SEPARATOR, $item[$key]);
-				array_walk($price, 'floatval');
 				if (count($price)) {
 					$group_id = $this->_groups[$key]['id'];
 					$sql = 'INSERT INTO '.$table_name.' (entity_id, all_groups, customer_group_id, value, website_id) VALUES ';
@@ -57,7 +56,7 @@ class GrouppriceProcessor extends Magmi_ItemProcessor
 							$data[] = $params['product_id'];
 							$data[] = 0;
 							$data[] = $group_id;
-							$data[] = $price[$key];
+							$data[] = (float) str_replace(",", ".", $price[$key]);
 							$data[] = $website_id;
 						}
 					}
