@@ -1,5 +1,6 @@
-Magmi Plugin For Importing Customer Group Prices (base code / forked from tim-bezhashvyly/magmi-grouped-price-plugin)
+Magmi Plugin For Importing Group Prices
 ================================================
+ (base code / forked from tim-bezhashvyly/magmi-grouped-price-plugin)
 
 This plugin allows to import customer group prices.
 The column format for customer price groups is `group_price:customer_group`, where `customer_group` is your customer group name.
