@@ -8,7 +8,7 @@ Just copy it to your Magmi directory respecting directory structure. After that 
 The column format for customer price groups is `group_price:customer_group`, where `customer_group` is your customer group name.
 
 Multiwebsite functionality
-==========================
+--------------------------
 
 You should have a `websites` column with comma separated website codes (e.g. com,net) in your import file.
 
