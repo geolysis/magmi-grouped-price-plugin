@@ -11,11 +11,12 @@ class GrouppriceProcessor extends Magmi_ItemProcessor
 
 	public function getPluginInfo()
 	{
-		return array(
+		$info = array(
 			'name' => 'Group Price Importer',
-			'author' => 'Tim Bezhashvyly / Andreas Gerhards, Netactive Ltd.: tweaked to work with different websites/stores',
-			'version' => 'v1.0.1 based 0.0.1'
+			'author' => 'Tim Bezhashvyly; tweaked by Andreas Gerhards to work with different websites/stores',
+			'version' => '1.0.1'
 		);
+		return $info;
 	}
 
 
