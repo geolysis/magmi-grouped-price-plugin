@@ -33,14 +33,17 @@ class GrouppriceProcessor extends Magmi_ItemProcessor
 					$groupIds[] = $this->_groups[$key]['id'];
 				}
 			}
+			
+	        $deleteLegacyData = FALSE;
 
 			if (!empty($groupIds)) {
-				// Deletes only data on the new website data and not lecgacy data
-				$sql = 'DELETE FROM '.$table_name.' WHERE entity_id = ?'
-				 .' AND customer_group_id IN ('.implode(', ', $groupIds).')'
-				 .' AND website_id IN ('.implode(', ', $websiteIds).')';
-				$this->delete($sql, array($params['product_id']));
-			}
+	        $sql = "DELETE FROM '.$table_name.' WHERE entity_id = ?;";
+	        if (!$deleteLegacyData) {
+	          $sql .= ' AND customer_group_id IN ('.implode(', ', $groupIds).')'
+	            .' AND website_id IN ('.implode(', ', $websiteIds).')';
+	        }
+	        $this->delete($sql, array($params['product_id']));
+				}
 
 			foreach ($groupColumns as $key) {
 
